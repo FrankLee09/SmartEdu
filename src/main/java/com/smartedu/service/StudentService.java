@@ -38,8 +38,13 @@ public class StudentService {
 
     /** 新增班级，成功返回插入后带主键的对象 */
     public void addStudent(Student student){
+        String id = String.valueOf(student.getId());
+
+        student.setUsername(id);
+        student.setPassword("123456");
         studentMapper.insert(student);
     }
+
 
     /** 更新班级信息，成功返回 true */
     public void updateStudent(Student student){
@@ -72,6 +77,7 @@ public class StudentService {
     }
 
     public Student register(Student student) {
+
         this.addStudent(student);
         return studentMapper.selectByUsername(student.getUsername());
     }

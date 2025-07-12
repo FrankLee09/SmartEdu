@@ -1,7 +1,6 @@
 package com.smartedu.controller;
 
 import com.smartedu.common.Result;
-import com.smartedu.entity.Student;
 import com.smartedu.entity.StudentAnswer;
 import com.smartedu.service.StudentAnswerService;
 import jakarta.annotation.Resource;
@@ -28,13 +27,20 @@ public class StudentAnswerController {
         return Result.success(studentAnswerService.selectAll(studentAnswer));
     }
 
+    @GetMapping("/getByExamAndQuestion")
+    public Result getByExamAndQuestion(
+            @RequestParam Long examId,
+            @RequestParam Long questionId,
+            @RequestParam Long studentId) {
+        StudentAnswer studentAnswer = studentAnswerService.getByExamAndQuestion(examId, questionId, studentId);
+        return Result.success(studentAnswer);
+    }
+
     // 按 ID 查询
-    @GetMapping("/select/{id}")
+    @GetMapping("/{id}")
     public Result  selectById(@PathVariable Long id) {
         return Result.success(studentAnswerService.selectById(id));
     }
-
-
 
     // 添加
     @PostMapping("/add")

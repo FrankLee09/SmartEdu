@@ -18,6 +18,15 @@
         WHERE id = #{id}
     </select>
 
+
+    <!-- 按 STUDENTID 查询 -->
+    <select id="selectByStudentId" parameterType="long" resultType="com.smartedu.entity.TaskGrade">
+        SELECT *
+        FROM taskgrades
+        WHERE "studentId" = #{studentId}
+    </select>
+
+
     <!-- 模糊组合查询成绩 -->
     <select id="selectAll" parameterType="com.smartedu.entity.TaskGrade" resultType="com.smartedu.entity.TaskGrade">
         SELECT id, "studentId", "taskId", score, gradedate
@@ -40,6 +49,16 @@
             </if>
         </where>
         ORDER BY id ASC
+    </select>
+
+
+<!--7条最近-->
+    <select id="selectTop7ByIdDesc" parameterType="long" resultType="com.smartedu.entity.TaskGrade">
+        SELECT *
+        FROM taskgrades
+        WHERE "studentId" = #{studentId}
+        ORDER BY id DESC
+        LIMIT 7
     </select>
 
 

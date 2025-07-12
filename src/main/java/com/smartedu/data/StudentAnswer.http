@@ -1,0 +1,426 @@
+### add studentanswer
+POST http://localhost:8080/studentanswer/addJson
+Content-Type: application/json
+
+[
+  {"id":1,"studentId":1001,"questionId":1,"examId":101,"getscore":5.0,"answer":"B"},
+  {"id":2,"studentId":1001,"questionId":2,"examId":101,"getscore":5.0,"answer":"D"},
+  {"id":3,"student极":1001,"questionId":3,"examId":101,"getscore":5.0,"answer":"C"},
+  {"id":4,"studentId":1001,"questionId":4,"examId":101,"getscore":5.0,"answer":"C"},
+  {"id":5,"studentId":1001,"questionId":5,"examId":101,"getscore":5.0,"answer":"D"},
+  {"id":6,"studentId":1001,"questionId":6,"examId":101,"getscore":5.0,"answer":"C"},
+  {"id":7,"studentId":1001,"questionId":7,"examId":101,"getscore":5.0,"answer":"A"},
+  {"id":8,"studentId":1001,"questionId":8,"examId":101,"getscore":0.0,"answer":"A"},
+  {"id":9,"studentId":1001,"questionId":9,"examId":101,"getscore":0.0,"answer":"A"},
+  {"id":10,"studentId":1001,"questionId":10,"examId":101,"getscore":0.0,"answer":"A"},
+
+  {"id":11,"studentId":1002,"questionId":11,"examId":102,"getscore":5.0,"answer":"A"},
+  {"id":12,"studentId":1002,"questionId":12,"examId":102,"getscore":5.0,"answer":"B"},
+  {"id":13,"studentId":1002,"questionId":13,"examId":102,"getscore":5.0,"answer":"A"},
+  {"id":14,"studentId":1002,"questionId":14,"examId":102,"getscore":5.0,"answer":"C"},
+  {"id":15,"studentId":1002,"questionId":15,"examId":102,"getscore":5.0,"answer":"C"},
+  {"id":16,"studentId":1002,"questionId":16,"examId":102,"getscore":5.0,"answer":"D"},
+  {"id":17,"studentId":1002,"questionId":17,"examId":102,"getscore":0.0,"answer":"A"},
+  {"id":18,"studentId":1002,"questionId":18,"examId":102,"getscore":0.0,"answer":"A"},
+  {"id":19,"studentId":1002,"questionId":19,"examId":102,"getscore":0.0,"answer":"A"},
+  {"id":20,"studentId":1002,"questionId":20,"examId":102,"getscore":0.0,"answer":"A"},
+
+  {"id":21,"studentId":1003,"questionId":21,"examId":103,"getscore":5.0,"answer":"B"},
+  {"id":22,"studentId":1003,"questionId":22,"examId":103,"getscore":5.0,"answer":"B"},
+  {"id":23,"studentId":1003,"questionId":23,"examId":103,"getscore":5.0,"answer":"A"},
+  {"id":24,"studentId":1003,"questionId":24,"examId":103,"getscore":5.0,"answer":"A"},
+  {"id":25,"studentId":1003,"questionId":25,"examId":103,"getscore":5.0,"answer":"C"},
+  {"id":26,"studentId":1003,"questionId":26,"examId":103,"getscore":5.0,"answer":"B"},
+  {"id":27,"studentId":1003,"questionId":27,"examId":103,"getscore":5.0,"answer":"C"},
+  {"id":28,"studentId":1003,"questionId":28,"examId":103,"getscore":5.0,"answer":"A"},
+  {"id":29,"studentId":1003,"questionId":29,"examId":103,"getscore":5.0,"answer":"B"},
+  {"id":30,"studentId":1003,"questionId":30,"examId":103,"getscore":0.0,"answer":"A"},
+
+  {"id":31,"studentId":1004,"questionId":1,"examId":101,"getscore":5.0,"answer":"B"},
+  {"id":32,"studentId":1004,"questionId":2,"examId":101,"getscore":5.0,"answer":"D"},
+  {"id":33,"studentId":1004,"questionId":3,"examId":101,"getscore":5.0,"answer":"C"},
+  {"id":34,"studentId":1004,"questionId":4,"examId":101,"getscore":5.0,"answer":"C"},
+  {"id":35,"studentId":1004,"questionId":5,"examId":101,"getscore":0.0,"answer":"A"},
+  {"id":36,"studentId":1004,"questionId":6,"examId":101,"getscore":0.0,"answer":"A"},
+  {"id":37,"studentId":1004,"questionId":7,"examId":101,"getscore":0.0,"answer":"A"},
+  {"id":38,"studentId":1004,"questionId":8,"examId":101,"getscore":0.0,"answer":"A"},
+  {"id":39,"studentId":1004,"questionId":9,"examId":101,"getscore":0.0,"answer":"A"},
+  {"id":40,"studentId":1004,"questionId":10,"examId":101,"getscore":0.0,"answer":"A"},
+
+  {"id":41,"studentId":1005,"questionId":11,"examId":102,"getscore":5.0,"answer":"A"},
+  {"id":42,"studentId":1005,"questionId":12,"examId":102,"getscore":5.0,"answer":"B"},
+  {"id":43,"studentId":1005,"questionId":13,"examId":102,"getscore":5.0,"answer":"A"},
+  {"id":44,"studentId":1005,"questionId":14,"examId":102,"getscore":5.0,"answer":"C"},
+  {"id":45,"studentId":1005,"questionId":15,"examId":102,"getscore":5.0,"answer":"C"},
+  {"id":46,"studentId":1005,"questionId":16,"examId":102,"getscore":5.0,"answer":"D"},
+  {"id":47,"studentId":1005,"questionId":17,"examId":102,"getscore":5.0,"answer":"B"},
+  {"id":48,"studentId":1005,"questionId":18,"examId":102,"getscore":0.0,"answer":"A"},
+  {"id":49,"studentId":1005,"questionId":19,"examId":102,"getscore":0.0,"answer":"A"},
+  {"id":50,"studentId":1005,"questionId":20,"examId":102,"getscore":0.0,"answer":"A"},
+
+
+    {"id":51,"studentId":1006,"questionId":21,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":52,"studentId":1006,"questionId":22,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":53,"studentId":1006,"questionId":23,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":54,"studentId":1006,"questionId":24,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":55,"studentId":1006,"questionId":25,"examId":103,"getscore":5.0,"answer":"C"},
+    {"id":56,"studentId":1006,"questionId":26,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":57,"studentId":1006,"questionId":27,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":58,"studentId":1006,"questionId":28,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":59,"studentId":1006,"questionId":29,"examId":103,"极速core":0.0,"answer":"A"},
+    {"id":60,"studentId":1006,"questionId":30,"examId":103,"getscore":0.0,"answer":"A"},
+
+    {"id":61,"studentId":1007,"questionId":1,"examId":101,"getscore":5.0,"answer":"B"},
+    {"id":62,"studentId":1007,"questionId":2,"examId":101,"getscore":5.0,"answer":"D"},
+    {"id":63,"studentId":1007,"questionId":3,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":64,"studentId":1007,"questionId":4,"examId":101,"get极速":5.0,"answer":"C"},
+    {"id":65,"studentId":1007,"questionId":5,"examId":101,"getscore":5.0,"answer":"D"},
+    {"id":66,"studentId":1007,"questionId":6,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":67,"studentId":1007,"questionId":7,"examId":101,"getscore":5.0,"answer":"A"},
+    {"id":68,"studentId":1007,"questionId":8,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":69,"studentId":1007,"questionId":9,"examId":101,"getscore":0.0,"answer":"A"},
+    {"id":70,"studentId":1007,"questionId":10,"examId":101,"getscore":0.0,"answer":"A"},
+
+
+    {"id":71,"studentId":1008,"questionId":11,"examId":102,"getscore":5.0,"answer":"A"},
+    {"id":72,"studentId":1008,"questionId":12,"examId":102,"getscore":5.0,"answer":"B"},
+    {"id":73,"studentId":1008,"questionId":13,"examId":102,"getscore":5.0,"answer":"A"},
+    {"id":74,"studentId":1008,"questionId":14,"examId":102,"getscore":5.0,"answer":"C"},
+    {"id":75,"studentId":1008,"questionId":15,"examId":102,"getscore":5.0,"answer":"C"},
+    {"id":76,"studentId":1008,"questionId":16,"examId":102,"getscore":5.0,"answer":"D"},
+    {"id":77,"studentId":1008,"questionId":17,"examId":102,"getscore":0.0,"answer":"A"},
+    {"id":78,"studentId":1008,"questionId":18,"examId":102,"getscore":0.0,"answer":"A"},
+    {"id":79,"studentId":1008,"questionId":19,"examId":102,"getscore":0.0,"answer":"A"},
+    {"id":80,"studentId":1008,"questionId":20,"examId":102,"getscore":0.0,"answer":"A"},
+
+
+    {"id":81,"studentId":1009,"questionId":21,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":82,"studentId":1009,"questionId":22,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":83,"studentId":1009,"questionId":23,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":84,"studentId":1009,"questionId":24,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":85,"studentId":1009,"questionId":25,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":86,"studentId":1009,"questionId":26,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":87,"studentId":1009,"questionId":27,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":88,"studentId":1009,"questionId":28,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":89,"studentId":1009,"questionId":29,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":90,"studentId":1009,"questionId":30,"examId":103,"getscore":0.0,"answer":"A"},
+
+
+    {"id":91,"studentId":1010,"questionId":1,"examId":101,"getscore":5.0,"answer":"B"},
+    {"id":92,"studentId":1010,"questionId":2,"examId":101,"getscore":5.0,"answer":"D"},
+    {"id":93,"studentId":1010,"questionId":3,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":94,"studentId":1010,"questionId":4,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":95,"studentId":1010,"questionId":5,"examId":101,"getscore":5.0,"answer":"D"},
+    {"id":96,"studentId":1010,"questionId":6,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":97,"studentId":1010,"questionId":7,"examId":101,"getscore":5.0,"answer":"A"},
+    {"id":98,"studentId":1010,"questionId":8,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":99,"studentId":1010,"questionId":9,"examId":101,"getscore":0.0,"answer":"A"},
+    {"id":100,"studentId":1010,"questionId":10,"examId":101,"getscore":0.0,"answer":"A"},
+
+    {"id":101,"studentId":1011,"questionId":1,"examId":101,"getscore":5.0,"answer":"B"},
+    {"id":102,"studentId":1011,"questionId":2,"examId":101,"getscore":5.0,"answer":"D"},
+    {"id":103,"studentId":1011,"questionId":3,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":104,"studentId":1011,"questionId":4,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":105,"studentId":1011,"questionId":5,"examId":101,"getscore":5.0,"answer":"D"},
+    {"id":106,"studentId":1011,"questionId":6,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":107,"studentId":1011,"questionId":7,"examId":101,"getscore":5.0,"answer":"A"},
+    {"id":108,"studentId":1011,"questionId":8,"examId":101,"getscore":0.0,"answer":"A"},
+    {"id":109,"studentId":1011,"questionId":9,"极速amId":101,"getscore":0.0,"answer":"A"},
+    {"id":110,"studentId":1011,"questionId":10,"examId":101,"getscore":0.0,"answer":"A"},
+
+
+    {"id":111,"studentId":1012,"questionId":11,"examId":102,"getscore":5.0,"answer":"A"},
+    {"id":112,"studentId":1012,"questionId":12,"examId":102,"getscore":5.0,"answer":"B"},
+    {"id":113,"studentId":1012,"questionId":13,"examId":102,"getscore":5.0,"answer":"A"},
+    {"id":114,"studentId":1012,"questionId":14,"examId":102,"getscore":5.0,"answer":"C"},
+    {"id":115,"studentId":1012,"questionId":15,"examId":102,"getscore":5.0,"answer":"C"},
+    {"id":116,"studentId":1012,"questionId":16,"examId":102,"getscore":5.0,"answer":"D"},
+    {"id":117,"studentId":1012,"questionId":17,"examId":102,"getscore":0.0,"answer":"A"},
+    {"id":118,"studentId":1012,"questionId":18,"examId":102,"getscore":0.0,"answer":"A"},
+    {"id":119,"studentId":1012,"questionId":19,"examId":102,"getscore":0.0,"answer":"A"},
+    {"id":120,"studentId":1012,"questionId":20,"examId":102,"getscore":0.0,"answer":"A"},
+
+
+    {"id":121,"studentId":1013,"questionId":21,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":122,"studentId":1013,"questionId":22,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":123,"studentId":1013,"questionId":23,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":124,"studentId":1013,"questionId":24,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":125,"studentId":1013,"questionId":25,"examId":103,"getscore":5.0,"answer":"C"},
+    {"id":126,"studentId":1013,"questionId":26,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":127,"studentId":1013,"questionId":27,"examId":103,"getscore":5.0,"answer":"C"},
+    {"id":128,"studentId":1013,"questionId":28,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":129,"studentId":1013,"questionId":29,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":130,"studentId":1013,"questionId":30,"examId":103,"getscore":0.0,"answer":"A"},
+
+
+    {"id":131,"studentId":1014,"questionId":1,"examId":101,"getscore":5.0,"answer":"B"},
+    {"id":132,"studentId":1014,"questionId":2,"examId":101,"getscore":5.0,"answer":"D"},
+    {"id":133,"studentId":1014,"questionId":3,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":134,"studentId":1014,"questionId":4,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":135,"studentId":1014,"questionId":5,"examId":101,"getscore":5.0,"answer":"D"},
+    {"id":136,"studentId":1014,"questionId":6,"examId":101,"getscore":0.0,"answer":"A"},
+    {"id":137,"studentId":1014,"questionId":7,"examId":101,"getscore":0.0,"answer":"A"},
+    {"id":138,"studentId":1014,"questionId":8,"examId":101,"getscore":0.0,"answer":"A"},
+    {"id":139,"studentId":1014,"questionId":9,"examId":101,"getscore":0.0,"answer":"A"},
+    {"id":140,"studentId":1014,"questionId":10,"examId":101,"getscore":0.0,"answer":"A"},
+
+
+    {"id":141,"studentId":1015,"questionId":11,"examId":102,"getscore":5.0,"answer":"A"},
+    {"id":142,"studentId":1015,"questionId":12,"examId":102,"getscore":5.0,"answer":"B"},
+    {"id":143,"studentId":1015,"questionId":13,"examId":102,"getscore":5.0,"answer":"A"},
+    {"id":144,"studentId":1015,"questionId":14,"examId":102,"getscore":5.0,"answer":"C"},
+    {"id":145,"studentId":1015,"questionId":15,"examId":102,"getscore":5.0,"answer":"C"},
+    {"id":146,"studentId":1015,"questionId":16,"examId":102,"getscore":5.0,"answer":"D"},
+    {"id":147,"studentId":1015,"questionId":17,"examId":102,"getscore":5.0,"answer":"B"},
+    {"id":148,"studentId":1015,"questionId":18,"examId":102,"getscore":0.0,"answer":"A"},
+    {"id":149,"studentId":1015,"questionId":19,"examId":102,"getscore":0.0,"answer":"A"},
+    {"id":150,"studentId":1015,"questionId":20,"examId":102,"getscore":0.0,"answer":"A"},
+
+
+    {"id":151,"studentId":1016,"questionId":21,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":152,"studentId":1016,"questionId":22,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":153,"studentId":1016,"questionId":23,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":154,"studentId":1016,"questionId":24,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":155,"studentId":1016,"questionId":25,"examId":103,"getscore":5.0,"answer":"C"},
+    {"id":156,"studentId":1016,"questionId":26,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":157,"studentId":1016,"questionId":27,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":158,"studentId":1016,"questionId":28,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":159,"studentId":1016,"questionId":29,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":160,"studentId":1016,"questionId":30,"examId":103,"getscore":0.0,"answer":"A"},
+
+    {"id":151,"studentId":1016,"questionId":21,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":152,"studentId":1016,"questionId":22,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":153,"studentId":1016,"questionId":23,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":154,"studentId":1016,"questionId":24,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":155,"studentId":1016,"questionId":25,"examId":103,"getscore":5.0,"answer":"C"},
+    {"id":156,"studentId":1016,"questionId":26,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":157,"studentId":1016,"questionId":27,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":158,"studentId":1016,"questionId":28,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":159,"studentId":1016,"questionId":29,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":160,"studentId":1016,"questionId":30,"examId":103,"getscore":0.0,"answer":"A"},
+
+
+    {"id":161,"studentId":1017,"questionId":1,"examId":101,"getscore":5.0,"answer":"B"},
+    {"id":162,"studentId":1017,"questionId":2,"examId":101,"getscore":5.0,"answer":"D"},
+    {"id":163,"studentId":1017,"questionId":3,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":164,"studentId":1017,"questionId":4,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":165,"studentId":1017,"questionId":5,"examId":101,"getscore":5.0,"answer":"D"},
+    {"id":166,"studentId":1017,"questionId":6,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":167,"studentId":1017,"questionId":7,"examId":101,"getscore":5.0,"answer":"A"},
+    {"id":168,"studentId":1017,"questionId":8,"examId":101,"getscore":5.0,"answer":"C"},
+    {"极速":169,"studentId":1017,"questionId":9,"examId":101,"getscore":0.0,"answer":"A"},
+    {"id":170,"studentId":1017,"question极":10,"examId":101,"getscore":0.0,"answer":"A"},
+
+
+    {"id":172,"studentId":1018,"questionId":12,"examId":102,"getscore":5.0,"answer":"B"},
+    {"id":173,"studentId":1018,"questionId":13,"examId":102,"getscore":5.0,"answer":"A"},
+    {"id":174,"studentId":1018,"questionId":14,"examId":102,"getscore":5.0,"answer":"C"},
+    {"id":175,"studentId":1018,"questionId":15,"examId":102,"getscore":5.0,"answer":"C"},
+    {"id":176,"studentId":1018,"questionId":16,"examId":102,"getscore":5.0,"answer":"D"},
+    {"id":177,"studentId":1018,"questionId":17,"examId":102,"getscore":5.0,"answer":"B"},
+    {"id":178,"studentId":1018,"questionId":18,"examId":102,"getscore":0.0,"answer":"A"},
+    {"id":179,"studentId":1018,"questionId":19,"examId":102,"getscore":0.0,"answer":"A"},
+    {"id":180,"studentId":1018,"questionId":20,"examId":102,"getscore":0.0,"answer":"A"},
+
+
+    {"id":181,"studentId":1019,"questionId":21,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":182,"studentId":1019,"questionId":22,"examId":103,"getscore":5.0,"answer":"B"},
+    {"id":183,"studentId":1019,"questionId":23,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":184,"studentId":1019,"questionId":24,"examId":103,"getscore":5.0,"answer":"A"},
+    {"id":185,"studentId":1019,"questionId":25,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":186,"studentId":1019,"questionId":26,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":187,"studentId":1019,"questionId":27,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":188,"studentId":1019,"questionId":28,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":189,"studentId":1019,"questionId":29,"examId":103,"getscore":0.0,"answer":"A"},
+    {"id":190,"studentId":1019,"questionId":30,"examId":103,"getscore":0.0,"answer":"A"},
+
+
+    {"id":191,"studentId":1020,"questionId":1,"examId":101,"getscore":5.0,"answer":"B"},
+    {"id":192,"studentId":1020,"questionId":2,"examId":101,"getscore":5.0,"answer":"D"},
+    {"id":193,"studentId":1020,"questionId":3,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":194,"studentId":1020,"questionId":4,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":195,"studentId":1020,"questionId":5,"examId":101,"getscore":5.0,"answer":"D"},
+    {"id":196,"studentId":1020,"questionId":6,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":197,"studentId":1020,"questionId":7,"examId":101,"getscore":5.0,"answer":"A"},
+    {"id":198,"studentId":1020,"questionId":8,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":199,"studentId":1020,"questionId":9,"examId":101,"getscore":5.0,"answer":"C"},
+    {"id":200,"studentId":1020,"questionId":10,"examId":101,"getscore":0.0,"answer":"A"},
+
+
+    {
+      "id": 201,
+      "studentId": 1001,
+      "questionId": 31,
+      "examId": 101,
+      "getscore": 8.5,
+      "answer": "中断响应延迟直接影响系统实时性。延迟过大会导致：1) 关键任务错过截止时间（如工业控制指令延迟）2) 传感器数据丢失（采样窗口偏移）3) 系统响应抖动增大。优化方法包括使用优先级中断、减少关中断时间、优化ISR代码结构。"
+    },
+
+    {
+      "id": 202,
+      "studentId": 1002,
+      "questionId": 32,
+      "examId": 102,
+      "getscore": 8.0,
+      "answer": "虚拟语气与倒装结构在学术英语中协同使用场景：1) 条件句：'Were this theory correct, so too would the predictions align.'（省略if+倒装）2) 建议句：'Not only should the data be rechecked, but also would it be prudent...'（否定前置+虚拟）"
+    },
+
+    {
+      "id": 203,
+      "studentId": 1003,
+      "questionId": 33,
+      "examId": 103,
+      "getscore": 9.0,
+      "answer": "贝叶斯定理在医学诊断中的应用：后验概率 = (灵敏度×患病率)/(灵敏度×患病率+(1-特异度)×(1-患病率))。当患病率0.01、灵敏度0.95、特异度0.90时，阳性结果真实患病概率仅8.76%。"
+    },
+
+    {
+      "id": 204,
+      "studentId": 1004,
+      "questionId": 31,
+      "examId": 101,
+      "getscore": 7.5,
+      "answer": "中断延迟导致实时任务执行不及时，在汽车控制系统中可能引发刹车指令延迟。需要优化中断处理程序执行时间。"
+    },
+
+    {
+      "id": 205,
+      "studentId": 1005,
+      "questionId": 32,
+      "examId": 102,
+      "getscore": 8.5,
+      "answer": "例如：'Had the experiment been controlled properly, neither would the results have been questioned.' 这种结构在学术论文中用于表达假设性结论。"
+    },
+
+    {
+      "id": 206,
+      "studentId": 1006,
+      "questionId": 33,
+      "examId": 103,
+      "getscore": 7.0,
+      "answer": "贝叶斯定理通过先验概率计算后验概率。在疾病诊断中，即使检测阳性，实际患病概率可能不高。"
+    },
+
+    {
+      "id": 207,
+      "studentId": 1007,
+      "questionId": 31,
+      "examId": 101,
+      "getscore": 9.0,
+      "answer": "影响包括：1) 控制周期失准（如无人机姿态调整延迟）2) 数据包丢失（CAN总线通信超时）3) 系统可靠性下降。解决方案：中断嵌套、DMA传输、优先级分组。"
+    },
+
+    {
+      "id": 208,
+      "studentId": 1008,
+      "questionId": 32,
+      "examId": 102,
+      "getscore": 7.5,
+      "answer": "倒装与虚拟语气在科技论文中的协同：'Only were the conditions identical could the results be compared.'"
+    },
+
+    {
+      "id": 209,
+      "studentId": 1009,
+      "questionId": 33,
+      "examId": 103,
+      "getscore": 8.0,
+      "answer": "公式：P(病|+) = [P(+|病)×P(病)]/[P(+|病)×P(病)+P(+|健)×P(健)]。当疾病罕见时，阳性预测值较低。"
+    },
+
+    {
+      "id": 210,
+      "studentId": 1010,
+      "questionId": 31,
+      "examId": 101,
+      "getscore": 8.0,
+      "answer": "中断延迟在工业控制中可能造成机械臂动作不同步。优化方法包括使用硬件加速中断响应。"
+    },
+
+    {
+      "id": 211,
+      "studentId": 1011,
+      "questionId": 32,
+      "examId": 102,
+      "getscore": 9.0,
+      "answer": "'Not only should the protocol be standardized, but also would it be essential to implement blinded controls.' 展示建议性虚拟语气与倒装的协同使用。"
+    },
+
+    {
+      "id": 212,
+      "studentId": 1012,
+      "questionId": 33,
+      "examId": 103,
+      "getscore": 8.5,
+      "answer": "贝叶斯诊断模型考虑先验概率和检测准确性。在罕见病筛查中，阳性结果可能多为假阳性。"
+    },
+
+    {
+      "id": 213,
+      "studentId": 1013,
+      "questionId": 31,
+      "examId": 101,
+      "getscore": 7.0,
+      "answer": "中断响应延迟会导致实时任务执行不及时，需要优化中断处理程序。"
+    },
+   {
+      "id": 214,
+      "studentId": 1014,
+      "questionId": 32,
+      "examId": 102,
+      "getscore": 8.0,
+      "answer": "虚拟语气用于表达假设情况，倒装结构改变句子顺序，学术写作中常协同使用。"
+    },
+    {
+      "id": 215,
+      "studentId": 1015,
+      "questionId": 33,
+      "examId": 103,
+      "getscore": 9.5,
+      "answer": "临床应用：1) 艾滋病筛查（低患病率时PPV低）2) 癌症风险评估 3) 检测策略优化。证明单一检测对罕见病诊断价值有限。"
+    },
+
+    {
+      "id": 216,
+      "studentId": 1016,
+      "questionId": 31,
+      "examId": 101,
+      "getscore": 9.5,
+      "answer": "三维影响：1) 时间维度：硬实时任务超时 2) 数据维度：ADC采样偏移 3) 系统维度：累积抖动。解决方案：硬件中断控制器优化、ISR分段处理。"
+    },
+
+    {
+      "id": 217,
+      "studentId": 1017,
+      "questionId": 32,
+      "examId": 102,
+      "getscore": 8.5,
+      "answer": "'Were the methodology sound, neither would peer reviewers have raised objections.' 展示科研论文中的虚拟与倒装协同。"
+    },
+
+    {
+      "id": 218,
+      "studentId": 1018,
+      "questionId": 33,
+      "examId": 103,
+      "getscore": 7.5,
+      "answer": "贝叶斯定理通过先验概率计算后验概率，在医疗检测中有重要应用价值。"
+    },
+    {
+      "id": 219,
+      "studentId": 1019,
+      "questionId": 31,
+      "examId": 101,
+      "getscore": 8.5,
+      "answer": "在无人机飞控中，关键中断响应需压缩至微秒级。延迟会导致姿态控制失准和数据丢失。"
+    },
+
+    {
+      "id": 220,
+      "studentId": 1020,
+      "questionId": 32,
+      "examId": 102,
+      "getscore": 9.0,
+      "answer": "高级应用：1) 科研论文中的假设表达 2) 学术建议句式 3) 文献批评中的强化否定。"
+    }
+  ]

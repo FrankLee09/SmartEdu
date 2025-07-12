@@ -1,0 +1,78 @@
+### add submission
+POST http://localhost:8080/submission/addJson
+Content-Type: application/json
+
+[
+  {
+    "id": 3001,
+    "studentId": 1001,
+    "taskId": 101,
+    "fileUrl": "/uploads/submissions/student1_task101.pdf",
+    "submitTime": "2025-07-18T14:30:00",
+    "filename": "ARM实验报告_张同学.pdf"
+  },
+  {
+    "id": 3002,
+    "studentId": 1004,
+    "taskId": 101,
+    "fileUrl": "/uploads/submissions/student4_task101.docx",
+    "submitTime": "2025-07-19T10:15:00",
+    "filename": "ARM实验报告_李同学.docx"
+  },
+  {
+    "id": 3003,
+    "studentId": 1007,
+    "taskId": 101,
+    "fileUrl": "/uploads/submissions/student7_task101.pdf",
+    "submitTime": "2025-07-19T16:45:00",
+    "filename": "ARM实验报告_王同学.pdf"
+  },
+  {
+    "id": 3004,
+    "studentId": 2,
+    "taskId": 102,
+    "fileUrl": "/uploads/submissions/student2_task102.docx",
+    "submitTime": "2025-07-22T11:20:00",
+    "filename": "AI伦理作文_赵同学.docx"
+  },
+  {
+    "id": 3005,
+    "studentId": 1005,
+    "taskId": 102,
+    "fileUrl": "/uploads/submissions/student5_task102.docx",
+    "submitTime": "2025-07-23T09:30:00",
+    "filename": "AI伦理作文_钱同学.docx"
+  },
+  {
+    "id": 3006,
+    "studentId": 1008,
+    "taskId": 102,
+    "fileUrl": "/uploads/submissions/student8_task102.pdf",
+    "submitTime": "2025-07-24T15:10:00",
+    "filename": "AI伦理作文_孙同学.pdf"
+  },
+  {
+    "id": 3007,
+    "studentId": 1003,
+    "taskId": 103,
+    "fileUrl": "/uploads/submissions/student3_task103.pdf",
+    "submitTime": "2025-07-28T14:00:00",
+    "filename": "概率论习题_周同学.pdf"
+  },
+  {
+    "id": 3008,
+    "studentId": 1006,
+    "taskId": 103,
+    "fileUrl": "/uploads/submissions/student6_task103.pdf",
+    "submitTime": "2025-07-29T10:45:00",
+    "filename": "概率论习题_吴同学.pdf"
+  },
+  {
+    "id": 3009,
+    "studentId": 1009,
+    "taskId": 103,
+    "fileUrl": "/uploads/submissions/student9_task103.docx",
+    "submitTime": "2025-07-29T17:30:00",
+    "filename": "概率论习题_郑同学.docx"
+  }
+]

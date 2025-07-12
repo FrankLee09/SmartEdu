@@ -1,0 +1,36 @@
+### add user
+POST http://localhost:8080/user/addJson
+Content-Type: application/json
+
+[
+  {
+    "id": 1001,
+    "username": "tech_lead",
+    "password": "encrypted_tech_hash",
+    "email": "tech.lead@smartedu.edu.cn"
+  },
+  {
+    "id": 1002,
+    "username": "design_expert",
+    "password": "encrypted_design_hash",
+    "email": "design.expert@smartedu.edu.cn"
+  },
+  {
+    "id": 1003,
+    "username": "data_analyst",
+    "password": "encrypted_data_hash",
+    "email": "data.analyst@smartedu.edu.cn"
+  },
+  {
+    "id": 1004,
+    "username": "sys_admin",
+    "password": "encrypted_admin_hash",
+    "email": "sys.admin@smartedu.edu.cn"
+  },
+  {
+    "id": 1005,
+    "username": "content_specialist",
+    "password": "encrypted_content_hash",
+    "email": "content.specialist@smartedu.edu.cn"
+  }
+]

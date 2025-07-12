@@ -1,0 +1,12 @@
+### add resourze
+POST http://localhost:8080/resourze/addJson
+Content-Type: application/json
+[
+{
+    "id": 1,
+    "courseId": 1,
+    "title": "实验要求.pdf",
+    "uploadTime": "2025-7-21",
+    "fileUrl":"/uploads/resourze/embedded_lab.pdf"
+  }
+]

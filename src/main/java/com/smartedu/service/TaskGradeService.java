@@ -52,4 +52,14 @@ public class TaskGradeService {
             this.deleteById(id);
         }
     }
+
+    public List<TaskGrade> getGradesByStudentId(Long studentId) {
+        return taskGradeMapper.selectByStudentId(studentId);
+    }
+
+    public List<TaskGrade> selectTop7ByIdDesc(Long studentId) {
+
+        return taskGradeMapper.selectTop7ByIdDesc(studentId);
+    }
+
 }

@@ -1,0 +1,37 @@
+### add exam
+POST http://localhost:8080/exam/addJson
+Content-Type: application/json
+
+
+[
+  {
+    "id":101,
+    "questionIds":[1,2,3,4,5,6,7,8,9,10,31],
+    "courseId":1,
+    "totalscore":60,
+    "startTime":"2025年7月11号9:00",
+    "endTime":"2025年7月11号11:00",
+    "title":"嵌入式期末考试",
+    "tag":""
+  },
+  {
+    "id":102,
+    "questionIds":[11,12,13,14,15,16,17,18,19,20,32],
+    "courseId":2,
+    "totalscore":60,
+    "startTime":"2025年7月12号14:00",
+    "endTime":"2025年7月12号16:00",
+    "title":"大学英语期末考试",
+    "tag":""
+  },
+  {
+    "id":103,
+    "questionIds":[21,22,23,24,25,26,27,28,29,30,33],
+    "courseId":3,
+    "totalscore":60,
+    "startTime":"2025年7月13号14:00",
+    "endTime":"2025年7月13号16:00",
+    "title":"概率论期末考试",
+    "tag":""
+  }
+]

@@ -3,8 +3,6 @@ package com.smartedu.controller;
 import com.github.pagehelper.PageInfo;
 import com.smartedu.common.Result;
 import com.smartedu.entity.Course;
-import com.smartedu.entity.Student;
-import com.smartedu.entity.StudentAnswer;
 import com.smartedu.service.CourseService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
@@ -54,12 +52,13 @@ public class CourseController {
         courseService.update(course);
         return Result.success();
     }
-
+    
     @DeleteMapping("/delete/{id}")
     public Result  delete(@PathVariable Long id) {
         courseService.deleteById(id);
         return Result.success();
     }
+    
 
     @DeleteMapping("/deleteBatch")
     public Result deleteBatch(@RequestBody List<Long> ids) {

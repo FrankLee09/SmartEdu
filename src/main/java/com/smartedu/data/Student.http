@@ -1,0 +1,227 @@
+### add student
+POST http://localhost:8080/student/addJson
+Content-Type: application/json
+
+[
+  {
+    "id": 1001,
+    "username": "student1",
+    "password": "encrypted_password_hash",
+    "newPassword": "",
+    "role": "student",
+    "name": "张三",
+    "email": "zhangsan@example.com",
+    "classId": 1,
+    "avatar": "avatar1.jpg"
+  },
+  {
+    "id": 1002,
+    "username": "student2",
+    "password": "encrypted_password_hash",
+    "newPassword": "",
+    "role": "student",
+    "name": "李四",
+    "email": "lisi@example.com",
+    "classId": 2,
+    "avatar": "avatar2.jpg"
+  },
+  {
+    "id": 1003,
+    "username": "student3",
+    "password": "encrypted_password_hash",
+    "newPassword": "",
+    "role": "student",
+    "name": "王五",
+    "email": "wangwu@example.com",
+    "classId": 3,
+    "avatar": "avatar3.jpg"
+  },
+  {
+    "id": "1004",
+    "username": "student4",
+    "password": "encrypted_password_hash",
+    "newPassword": "",
+    "role": "student",
+    "name": "赵六",
+    "email": "zhaoliu@example.com",
+    "classId": 1,
+    "avatar": "avatar4.jpg"
+  },
+  {
+    "id": 1005,
+    "username": "student5",
+    "password": "encrypted_password_hash",
+    "newPassword": "",
+    "role": "student",
+    "name": "钱七",
+    "email": "qianqi@example.com",
+    "classId": 2,
+    "avatar": "avatar5.jpg"
+  },
+    {
+      "id": 1006,
+      "username": "student6",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "孙八",
+      "email": "student6@smartedu.edu.cn",
+      "classId": 3,
+      "avatar": "avatar6.jpg"
+    },
+    {
+      "id": 1007,
+      "username": "student7",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "周九",
+      "email": "student7@smartedu.edu.cn",
+      "classId": 1,
+      "avatar": "avatar7.jpg"
+    },
+    {
+      "id": 1008,
+      "username": "student8",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "吴工",
+      "email": "student8@smartedu.edu.cn",
+      "classId": 2,
+      "avatar": "avatar8.jpg"
+    },
+    {
+      "id": 1009,
+      "username": "student9",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "郑伯",
+      "email": "student9@smartedu.edu.cn",
+      "classId": 3,
+      "avatar": "avatar9.jpg"
+    },
+    {
+      "id": 1010,
+      "username": "student10",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "学生十",
+      "email": "student10@smartedu.edu.cn",
+      "classId": 1,
+      "avatar": "avatar10.jpg"
+    },
+    {
+      "id": 1011,
+      "username": "student11",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "学生十一",
+      "email": "student11@smartedu.edu.cn",
+      "classId": 2,
+      "avatar": "avatar11.jpg"
+    },
+    {
+      "id": 1012,
+      "username": "student12",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "学生十二",
+      "email": "student12@smartedu.edu.cn",
+      "classId": 3,
+      "avatar": "avatar12.jpg"
+    },
+    {
+      "id": 1013,
+      "username": "student13",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "学生十三",
+      "email": "student13@smartedu.edu.cn",
+      "classId": 1,
+      "avatar": "avatar13.jpg"
+    },
+    {
+      "id": 1014,
+      "username": "student14",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "学生十四",
+      "email": "student14@smartedu.edu.cn",
+      "classId": 2,
+      "avatar": "avatar14.jpg"
+    },
+    {
+      "id": 1015,
+      "username": "student15",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "学生十五",
+      "email": "student15@smartedu.edu.cn",
+      "classId": 3,
+      "avatar": "avatar15.jpg"
+    },
+    {
+      "id": 1016,
+      "username": "student16",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "学生十六",
+      "email": "student16@smartedu.edu.cn",
+      "classId": 1,
+      "avatar": "avatar16.jpg"
+    },
+    {
+      "id": 1017,
+      "username": "student17",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "学生十七",
+      "email": "student17@smartedu.edu.cn",
+      "classId": 2,
+      "avatar": "avatar17.jpg"
+    },
+    {
+      "id": 1018,
+      "username": "student18",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "学生十八",
+      "email": "student18@smartedu.edu.cn",
+      "classId": 3,
+      "avatar": "avatar18.jpg"
+    },
+    {
+      "id": 1019,
+      "username": "student19",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "学生十九",
+      "email": "student19@smartedu.edu.cn",
+      "classId": 1,
+      "avatar": "avatar19.jpg"
+    },
+    {
+      "id": 1020,
+      "username": "student20",
+      "password": "encrypted_password_hash",
+      "newPassword": "",
+      "role": "student",
+      "name": "学生二十",
+      "email": "student20@smartedu.edu.cn",
+      "classId": 2,
+      "avatar": "avatar20.jpg"
+    }
+  ]
+]

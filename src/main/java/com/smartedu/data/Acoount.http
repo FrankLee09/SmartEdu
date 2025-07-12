@@ -1,0 +1,31 @@
+### add account
+POST http://localhost:8080/account/addJson
+Content-Type: application/json
+
+[{
+  "id": 10001,
+  "username": "example_user1",
+  "password": "securePassword123!",
+  "role": "student",
+  "name": "张三",
+  "newPassword": null,
+  "avatar": "avatars/default_student1.png"
+},
+  {
+    "id": 10002,
+    "username": "example_user2",
+    "password": "securePassword123!",
+    "role": "student",
+    "name": "李四",
+    "newPassword": null,
+    "avatar": "avatars/default_student2.png"
+  },
+  {
+  "id": 10003,
+  "username": "example_user3",
+  "password": "securePassword123!",
+  "role": "student",
+  "name": "王五",
+  "newPassword": null,
+  "avatar": "avatars/default_student3.png"
+}]

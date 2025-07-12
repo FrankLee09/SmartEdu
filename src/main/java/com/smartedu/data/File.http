@@ -1,0 +1,152 @@
+### add file
+POST http://localhost:8080/file/addJson
+Content-Type: application/json
+
+[
+  {
+    "id": 1001,
+    "filename": "ARM实验指导书.pdf",
+    "fileUrl": "/uploads/tasks/embedded_lab_guide.pdf",
+    "description": "GPIO控制实验详细操作指南",
+    "taskId": 101,
+    "courseId": 1,
+    "studentId": null,
+    "submissionId": null,
+    "tag": "实验资料",
+    "finished": 0.0
+  },
+  {
+    "id": 1002,
+    "filename": "英语写作模板.docx",
+    "fileUrl": "/uploads/tasks/english_writing_template.docx",
+    "description": "学术议论文结构与范例",
+    "taskId": 102,
+    "courseId": 2,
+    "studentId": null,
+    "submissionId": null,
+    "tag": "参考资料",
+    "finished": 0.0
+  },
+  {
+    "id": 1003,
+    "filename": "概率论习题答案.pdf",
+    "fileUrl": "/uploads/tasks/probability_solutions.pdf",
+    "description": "第三章习题详细解析",
+    "taskId": 103,
+    "courseId": 3,
+    "studentId": null,
+    "submissionId": null,
+    "tag": "参考答案",
+    "finished": 0.0
+  },
+
+  {
+    "id": 2001,
+    "filename": "ARM实验报告_张同学.pdf",
+    "fileUrl": "/uploads/submissions/student1_task101.pdf",
+    "description": "GPIO控制LED实验报告",
+    "taskId": 101,
+    "courseId": 1,
+    "studentId": 1001,
+    "submissionId": 3001,
+    "tag": "实验报告",
+    "finished": 1.0
+  },
+  {
+    "id": 2002,
+    "filename": "ARM实验报告_李同学.docx",
+    "fileUrl": "/uploads/submissions/student4_task101.docx",
+    "description": "LED闪烁控制实验",
+    "taskId": 101,
+    "courseId": 1,
+    "studentId": 1004,
+    "submissionId": 3002,
+    "tag": "实验报告",
+    "finished": 1.0
+  },
+  {
+    "id": 2003,
+    "filename": "ARM实验报告_王同学.pdf",
+    "fileUrl": "/uploads/submissions/student7_task101.pdf",
+    "description": "中断响应实验记录",
+    "taskId": 101,
+    "courseId": 1,
+    "studentId": 1007,
+    "submissionId": 3003,
+    "tag": "实验报告",
+    "finished": 1.0
+  },
+
+  {
+    "id": 2004,
+    "filename": "AI伦理作文_赵同学.docx",
+    "fileUrl": "/uploads/submissions/student2_task102.docx",
+    "description": "人工智能的道德边界",
+    "taskId": 102,
+    "courseId": 2,
+    "studentId": 1002,
+    "submissionId": 3004,
+    "tag": "议论文",
+    "finished": 1.0
+  },
+  {
+    "id": 2005,
+    "filename": "AI伦理作文_钱同学.docx",
+    "fileUrl": "/uploads/submissions/student5_task102.docx",
+    "description": "机器学习中的偏见问题",
+    "taskId": 102,
+    "courseId": 2,
+    "studentId": 1005,
+    "submissionId": 3005,
+    "tag": "议论文",
+    "finished": 1.0
+  },
+  {
+    "id": 2006,
+    "filename": "AI伦理作文_孙同学.pdf",
+    "fileUrl": "/uploads/submissions/student8_task102.pdf",
+    "description": "自主决策系统的责任归属",
+    "taskId": 102,
+    "courseId": 2,
+    "studentId": 1008,
+    "submissionId": 3006,
+    "tag": "议论文",
+    "finished": 1.0
+  },
+  {
+    "id": 2007,
+    "filename": "概率论习题_周同学.pdf",
+    "fileUrl": "/uploads/submissions/student3_task103.pdf",
+    "description": "随机过程习题解答",
+    "taskId": 103,
+    "courseId": 3,
+    "studentId": 1003,
+    "submissionId": 3007,
+    "tag": "课后作业",
+    "finished": 1.0
+  },
+  {
+    "id": 2008,
+    "filename": "概率论习题_吴同学.pdf",
+    "fileUrl": "/uploads/submissions/student6_task103.pdf",
+    "description": "第三章习题解析",
+    "taskId": 103,
+    "courseId": 3,
+    "studentId": 1006,
+    "submissionId": 3008,
+    "tag": "课后作业",
+    "finished": 1.0
+  },
+  {
+    "id": 2009,
+    "filename": "概率论习题_郑同学.docx",
+    "fileUrl": "/uploads/submissions/student9_task103.docx",
+    "description": "可靠性分析计算",
+    "taskId": 103,
+    "courseId": 3,
+    "studentId": 1009,
+    "submissionId": 3009,
+    "tag": "课后作业",
+    "finished": 1.0
+  }
+]

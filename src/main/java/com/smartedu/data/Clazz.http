@@ -1,0 +1,21 @@
+### add clazz
+POST http://localhost:8080/class/addJson
+Content-Type: application/json
+
+[
+  {
+    "id": 2301,
+    "name": "软件2301",
+    "teacherId": 1001
+  },
+    {
+  "id": 2302,
+  "name": "软件2302",
+  "teacherId": 1002
+  },
+    {
+  "id": 2303,
+  "name": "软件2303",
+  "teacherId": 1003
+  }
+]

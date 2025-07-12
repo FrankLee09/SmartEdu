@@ -21,6 +21,10 @@ public class StudentAnswerService {
         return studentAnswerMapper.selectAll(studentAnswer);
     }
 
+    public StudentAnswer getByExamAndQuestion(Long examId, Long questionId, Long studentId) {
+        return studentAnswerMapper.getByExamAndQuestion(examId, questionId, studentId);
+    }
+
     public StudentAnswer selectById(Long id) {
         return studentAnswerMapper.selectById(id);
     }

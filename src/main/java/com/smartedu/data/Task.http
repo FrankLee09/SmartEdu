@@ -1,0 +1,45 @@
+### add task
+POST http://localhost:8080/task/addJson
+Content-Type: application/json
+
+[
+  {
+    "id": 101,
+    "title": "ARM汇编编程实验",
+    "content": "完成GPIO控制LED的实验报告",
+    "classIds": [1],
+    "dueDate": "2025-07-20",
+    "filename": "实验要求.pdf",
+    "fileUrl": "/uploads/tasks/embedded_lab.pdf",
+    "tag": "硬件实验",
+    "time": "2025-07-10",
+    "courseId": 1,
+    "completedStudentIds": [1001, 1004, 1007]
+  },
+  {
+    "id": 102,
+    "title": "人工智能主题作文",
+    "content": "撰写一篇关于AI伦理的英语议论文",
+    "classIds": [2],
+    "dueDate": "2025-07-25",
+    "filename": "写作指南.docx",
+    "fileUrl": "/uploads/tasks/english_essay.docx",
+    "tag": "写作作业",
+    "time": "2025-07-12",
+    "courseId": 2,
+    "completedStudentIds": [1002, 1005, 1008]
+  },
+  {
+    "id": 103,
+    "title": "随机过程习题集",
+    "content": "完成第三章的10道概率论习题",
+    "classIds": [3],
+    "dueDate": "2025-07-30",
+    "filename": "习题集.pdf",
+    "fileUrl": "/uploads/tasks/probability_problems.pdf",
+    "tag": "课后练习",
+    "time": "2025-07-15",
+    "courseId": 3,
+    "completedStudentIds": [1003, 1006, 1009]
+  }
+]

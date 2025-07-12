@@ -19,4 +19,8 @@ public interface TaskGradeMapper {
     int update(TaskGrade taskGrade);
 
     int deleteById(Long id);
+
+    List<TaskGrade> selectByStudentId(Long id);
+    List<TaskGrade> selectTop7ByIdDesc(Long id);
+
 }

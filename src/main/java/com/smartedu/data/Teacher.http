@@ -1,0 +1,44 @@
+### add teacher
+POST http://localhost:8080/teacher/addJson
+Content-Type: application/json
+
+[
+  {
+  "id": 1001,
+  "name": "王大明",
+  "email": "1111111111@edu.com",
+  "classId": 1,
+  "avatar": "/avatars/prof_wang.jpg",
+  "username": "wangdaming",
+  "password": "wangdaming",
+  "newPassword": "newwangdaming",
+  "role": "teacher"
+
+  },
+  {
+    "id": 1002,
+    "name": "李山姆",
+    "email": "2222222222@edu.com",
+    "classId": 2,
+    "avatar": "/avatars/prof_li.jpg",
+    "username": "lishanmu",
+    "password": "lishanmu",
+    "newPassword": "newlishanmu",
+    "role": "teacher"
+
+  },
+  {
+    "id": 1003,
+    "name": "张六",
+    "email": "3333333333@edu.com",
+    "classid": 3,
+    "avater": "/avatars/prof_zhang.jpg",
+    "username": "zhangliu",
+    "password": "zhangliu",
+    "newpassword": "newzhangli",
+    "role": "teacher"
+
+  }
+
+]
+

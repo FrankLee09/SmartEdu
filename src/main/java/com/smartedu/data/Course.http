@@ -1,0 +1,43 @@
+### add course
+POST http://localhost:8080/course/addJson
+Content-Type: application/json
+
+[
+  {
+    "id": 1,
+    "title": "嵌入式系统",
+    "description": "ARM体系结构与实时操作系统开发",
+    "teacherId": 1001,
+    "teacherName": "王大明",
+    "tag": "专业课",
+    "time": "2023-2024学年秋季学期",
+    "teacherAvatar": "/avatars/prof_wang.jpg",
+    "imgs": "/course_covers/embedded.jpg"
+  },
+  {
+    "id": 2,
+    "title": "英语",
+    "description": "学术英语写作与专业术语",
+    "teacherId": 1002,
+    "teacherName": "李山姆",
+    "tag": "公共课",
+    "time": "2023-2024学年秋季学期",
+    "teacherAvatar": "/avatars/prof_li.jpg",
+    "imgs": "/course_covers/english.jpg"
+  },
+  {
+    "id": 3,
+    "title": "概率论",
+    "description": "随机过程与可靠性分析",
+    "teacherId": 1003,
+    "teacherName": "张六",
+    "tag": "专业基础课",
+    "time": "2023-2024学年秋季学期",
+    "teacherAvatar": "/avatars/prof_zhang.jpg",
+    "imgs": "/course_covers/probability.jpg"
+  }
+]
+
+
+
+

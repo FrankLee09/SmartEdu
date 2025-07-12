@@ -1,0 +1,71 @@
+### add taskgrade
+POST http://localhost:8080/taskgrade/addJson
+Content-Type: application/json
+
+[
+  {
+    "id": 2001,
+    "studentId": 1001,
+    "taskId": 101,
+    "score": 85.0,
+    "gradedate": "2025-07-22"
+  },
+  {
+    "id": 2002,
+    "studentId": 1004,
+    "taskId": 101,
+    "score": 90.5,
+    "gradedate": "2025-07-22"
+  },
+  {
+    "id": 2003,
+    "studentId": 1007,
+    "taskId": 101,
+    "score": 78.0,
+    "gradedate": "2025-07-22"
+  },
+
+  {
+    "id": 2004,
+    "studentId": 1002,
+    "taskId": 102,
+    "score": 92.5,
+    "gradedate": "2025-07-27"
+  },
+  {
+    "id": 2005,
+    "studentId": 1005,
+    "taskId": 102,
+    "score": 88.0,
+    "gradedate": "2025-07-27"
+  },
+  {
+    "id": 2006,
+    "studentId": 1008,
+    "taskId": 102,
+    "score": 76.5,
+    "gradedate": "2025-07-27"
+  },
+
+  {
+    "id": 2007,
+    "studentId": 1003,
+    "taskId": 103,
+    "score": 95.0,
+    "gradedate": "2025-08-01"
+  },
+  {
+    "id": 2008,
+    "studentId": 1006,
+    "taskId": 103,
+    "score": 82.5,
+    "gradedate": "2025-08-01"
+  },
+  {
+    "id": 2009,
+    "studentId": 1009,
+    "taskId": 103,
+    "score": 79.0,
+    "gradedate": "2025-08-01"
+  }
+]

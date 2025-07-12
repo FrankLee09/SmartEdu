@@ -1,0 +1,145 @@
+### add examgrade
+POST http://localhost:8080/examgrade/addJson
+Content-Type: application/json
+
+[   {
+      "id": 1,
+      "studentId": 1001,
+      "examId": 101,
+      "score": 43.5,
+      "gradedate": "2025年7月13号"
+    },
+    {
+      "id": 2,
+      "studentId": 1002,
+      "examId": 102,
+      "score": 38.0,
+      "gradedate": "2025年7月14号"
+    },
+    {
+      "id": 3,
+      "studentId": 1003,
+      "examId": 103,
+      "score": 54.0,
+      "gradedate": "2025年7月15号"
+    },
+    {
+      "id": 4,
+      "studentId": 1004,
+      "examId": 101,
+      "score": 27.5,
+      "gradedate": "2025年7月13号"
+    },
+    {
+      "id": 5,
+      "studentId": 1005,
+      "examId": 102,
+      "score": 43.5,
+      "gradedate": "2025年7月14号"
+    },
+    {
+      "id": 6,
+      "studentId": 1006,
+      "examId": 103,
+      "score": 32.0,
+      "gradedate": "2025年7月15号"
+    },
+    {
+      "id": 7,
+      "studentId": 1007,
+      "examId": 101,
+      "score": 49.0,
+      "gradedate": "2025年7月13号"
+    },
+    {
+      "id": 8,
+      "studentId": 1008,
+      "examId": 102,
+      "score": 37.5,
+      "gradedate": "2025年7月14极"
+    },
+    {
+      "id": 9,
+      "studentId": 1009,
+      "examId": 103,
+      "score": 28.0,
+      "gradedate": "2025年7月15号"
+    },
+    {
+      "id": 10,
+      "studentId": 1010,
+      "examId": 101,
+      "score": 48.0,
+      "gradedate": "2025年7月13号"
+    },
+    {
+      "id": 11,
+      "studentId": 1011,
+      "examId": 102,
+      "score": 54.0,
+      "gradedate": "2025年7月14号"
+    },
+    {
+      "id": 12,
+      "studentId": 1012,
+      "examId": 103,
+      "score": 22.5,
+      "gradedate": "2025年7月15号"
+    },
+    {
+      "id": 13,
+      "studentId": 1013,
+      "examId": 101,
+      "score": 37.0,
+      "gradedate": "2025年7月13号"
+    },
+    {
+      "id": 14,
+      "studentId": 1014,
+      "examId": 102,
+      "score": 48.0,
+      "gradedate": "2025年7月14号"
+    },
+    {
+      "id": 15,
+      "studentId": 1015,
+      "examId": 103,
+      "score": 44.5,
+      "gradedate": "2025年7月15号"
+    },
+    {
+      "id": 16,
+      "studentId": 1016,
+      "examId": 101,
+      "score": 33.5,
+      "gradedate": "2025年7月13号"
+    },
+    {
+      "id": 17,
+      "studentId": 1017,
+      "examId": 102,
+      "score": 43.5,
+      "gradedate": "2025年7月14号"
+    },
+    {
+      "id": 18,
+      "studentId": 1018,
+      "examId": 103,
+      "score": 52.5,
+      "gradedate": "2025年7月15号"
+    },
+    {
+      "id": 19,
+      "studentId": 1019,
+      "examId": 101,
+      "score": 28.5,
+      "gradedate": "2025年7月13号"
+    },
+    {
+      "id": 20,
+      "studentId": 1020,
+      "examId": 102,
+      "score": 39.0,
+      "gradedate": "2025年7月14号"
+    }
+  ]

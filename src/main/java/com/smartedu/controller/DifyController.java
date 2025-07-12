@@ -1,12 +1,12 @@
 package com.smartedu.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.smartedu.entity.StudentAnswer;
 import com.smartedu.service.DifyReportScoreService;
 import com.smartedu.common.Result;
 import com.smartedu.entity.Exam;
 import com.smartedu.entity.File;
 import com.smartedu.entity.Question;
-import com.smartedu.entity.StudentAnswer;
 import com.smartedu.service.*;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
@@ -143,6 +143,7 @@ public class DifyController {
             return Result.error("500", "大模型错误");
         }
         System.out.println("得分: " + getScore);
+        String getScoreString = String.valueOf(getScore);
 
         StudentAnswer studentAnswer = new StudentAnswer();
         studentAnswer.setStudentId(studentId);
@@ -153,12 +154,12 @@ public class DifyController {
 
         studentAnswerService.add(studentAnswer);
 
-        return Result.success();
+        return Result.success(getScoreString);
     }
 
     @PostMapping("/reportScore")
     public Result reportScore(@RequestParam("file") MultipartFile file,
-                             @RequestParam("userId") String userId) {
+                              @RequestParam("userId") String userId) {
         try {
             // 创建临时文件
             java.io.File tempFile = java.io.File.createTempFile("upload-", "-" + file.getOriginalFilename());
@@ -176,8 +177,8 @@ public class DifyController {
 
             // 检查结果是否有效
             if (result == null || result.isEmpty() ||
-                result.contains("无法提取得分") ||
-                result.contains("系统异常")) {
+                    result.contains("无法提取得分") ||
+                    result.contains("系统异常")) {
                 return Result.error("500", result != null ? result : "文件处理失败");
             }
 
@@ -194,8 +195,8 @@ public class DifyController {
             System.out.println("接收到学习推荐请求，学生ID: " + studentId);
             String recommendation = difyRecommendService.getRecommendation(studentId);
             if (recommendation != null && !recommendation.isEmpty() &&
-                !recommendation.startsWith("解析推荐内容失败") &&
-                !recommendation.startsWith("无法解析推荐内容")) {
+                    !recommendation.startsWith("解析推荐内容失败") &&
+                    !recommendation.startsWith("无法解析推荐内容")) {
                 System.out.println("成功获取推荐内容");
                 return Result.success(recommendation);
             } else {

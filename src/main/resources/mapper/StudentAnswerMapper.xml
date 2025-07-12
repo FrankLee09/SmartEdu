@@ -45,6 +45,14 @@
         WHERE id = #{id}
     </select>
 
+    <select id="getByExamAndQuestion" resultType="com.smartedu.entity.StudentAnswer">
+        SELECT * FROM studentanswers
+        WHERE examId = #{examId}
+          AND questionId = #{questionId}
+          AND studentId = #{studentId}
+            LIMIT 1
+    </select>
+
     <!-- 插入 -->
     <insert id="insert" parameterType="com.smartedu.entity.StudentAnswer" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO studentanswers ("studentId", "examId", "questionId", getscore, answer)
