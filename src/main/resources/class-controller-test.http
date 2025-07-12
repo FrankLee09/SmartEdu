@@ -1,0 +1,323 @@
+### test getallclasses
+
+GET http://localhost:8080/class/getAll
+Accept: application/json
+
+### test selectById
+GET http://localhost:8080/class/selectById/101
+Accept: application/json
+
+
+### test selectById teacher
+GET http://localhost:8080/teacher/selectById/1
+Accept: application/json
+
+### add class
+POST http://localhost:8080/class/add
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 2304,
+  "name": "软件2304",
+  "teacherId":13
+}
+
+### add teacher
+POST http://localhost:8080/teacher/add
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 13,
+  "name": "teacher002"
+}
+
+
+### update teacher
+PUT http://localhost:8080/teacher/update
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "教师1号",
+  "classId": 1001
+}
+
+### add Student
+POST http://localhost:8080/student/add
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 6988,
+  "name": "LWB",
+  "email": "lwb@example.com",
+  "classId": 2304,
+  "username": "6988",
+  "password": "123456",
+  "role": "学生"
+}
+### select all
+POST http://localhost:8080/student/selectAll
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": null,
+  "name": null,
+  "email": null,
+  "classId":null
+}
+
+### get all
+GET http://localhost:8080/student/getAll
+Accept: application/json
+
+
+### add task
+POST http://localhost:8080/task/add
+Accept: application/json
+Content-Type: application/json
+
+{
+
+  "title": "完成软件工程报告",
+  "content": "撰写项目总结与展示PPT",
+  "classId": 110,
+
+  "dueDate": "2",
+  "filename": "313_iOS.docx"
+}
+
+### add task
+POST http://localhost:8080/task/add
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "小组作业",
+  "content": "请提交第3章练习题",
+  "classId": 2304,
+  "dueDate": "2025-07-10T23:59:59",
+  "filename": "homework3.docx",
+  "fileUrl": "/files/homework3.docx",
+  "tag": "作业",
+  "time": "2025-07-03T15:30:00",
+  "courseId": 6002,
+  "completedStudentIds": [1111,2222,3333]
+}
+
+### select all
+GET http://localhost:8080/task/selectAll
+Accept: application/json
+Content-Type: application/json
+
+### get all tasks
+GET http://localhost:8080/task/getAll
+Accept: application/json
+
+### add taskGrade
+POST http://localhost:8080/taskgrade/add
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 1,
+  "studentId": 101,
+  "taskId": 201,
+  "score": 95.0
+}
+
+#### upload file
+#POST http://localhost:8080/files/upload
+#Content-Type: multipart/form-data; boundary=WebAppBoundary
+#Accept: application/json
+#
+#--WebAppBoundary
+#Content-Disposition: form-data; name="file"; filename="iOS.docx"
+#Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+#
+#< F:/Users/15341/source/myHomeWork/iOS.docx
+#--WebAppBoundary--
+
+### Upload File
+POST http://localhost:8080/files/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+Accept: application/json
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="iOS.docx"
+Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+
+< F:/Users/15341/source/myHomeWork/iOS.docx
+--WebAppBoundary
+Content-Disposition: form-data; name="fileUrl"
+
+0100123_iOS.docx
+
+--WebAppBoundary--
+
+### update task grade
+PUT http://localhost:8080/taskgrade/update
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 1,
+  "studentId": 1001,
+  "taskId": 2001,
+  "score": 98.0,
+  "gradedate": "2025"
+}
+
+### delete task grade by ID
+DELETE http://localhost:8080/taskgrade/deleteById/1
+Accept: application/json
+
+
+### add exam grade
+POST http://localhost:8080/examgrade/add
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 1,
+  "studentId": 101,
+  "examId": 201,
+  "score": 95.0
+}
+
+
+### add resourze
+POST http://localhost:8080/resourze/add
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 9,
+  "title": "abc",
+  "description": "abc"
+
+}
+
+### delete file
+DELETE http://localhost:8080/files/deleteByUrl?fileUrl=20250626230100123_iOS.docx
+Accept: application/json
+
+### add question
+POST http://localhost:8080/question/add
+Content-Type: application/json
+
+{
+  "title": "以下哪个不是 Java 的基本数据类型？",
+  "description": "判断以下四个选项哪个不是基本数据类型",
+  "courseId": 1,
+  "answer": "C",
+  "kgPoint": "java",
+  "tag": "选择",
+  "score": 2.0
+}
+
+### rand
+GET http://localhost:8080/question/random?courseId=1&kgPoint=Java&selectCount=3&shortAnswerCount=2
+
+### add question
+POST http://localhost:8080/question/addJson
+Content-Type: application/json
+
+[
+  {
+    "title": "以下哪个不是 Java 的基本数据类型？",
+    "description": "判断以下四个选项哪个不是基本数据类型",
+    "courseId": 1,
+    "answer": "C",
+    "kgPoint": "java",
+    "tag": "选择",
+    "score": 6.1
+  },
+  {
+    "title": "Java 中用于继承的关键字是？",
+    "description": "选择正确的关键字",
+    "courseId": 1,
+    "answer": "B",
+    "kgPoint": "继承",
+    "tag": "选择",
+    "score": 6.2
+  },
+  {
+    "title": "JVM 是什么的缩写？",
+    "description": "选择正确的全称",
+    "courseId": 1,
+    "answer": "A",
+    "kgPoint": "Java基础",
+    "tag": "选择",
+    "score": 6.3
+  }
+]
+
+### test questionScore
+POST http://localhost:8080/dify/questionScore
+Content-Type: application/json
+
+{
+  "theQuestion": {
+    "id": 1,
+    "description": "嵌入式系统和通用计算机的主要区别是什么？",
+    "answer": "嵌入式系统和通用计算机的主要区别在于设计目标和应用场景。通用计算机旨在满足各种不同需求的用户，而嵌入式系统则专注于特定的任务和功能。嵌入式系统通常运行在资源受限的环境中，如内存、处理能力和功耗等方面有严格要求。",
+    "score": 10.0
+  },
+  "exam": {
+    "id": 101,
+    "title": "嵌入式测试"
+  },
+  "studentId": 3333,
+  "solution": "通用计算机可以做很多任务，比如浏览网页、办公和游戏，而嵌入式系统只执行特定的功能，比如洗衣机的控制器。嵌入式系统通常体积小、功耗低，而且和硬件结合得很紧密。"
+}
+### testfilejson
+POST http://localhost:8080/course/add
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "Java Web 开发",
+  "description": "介绍 Java Web 的基础开发流程",
+  "teacherId": 13,
+  "imgs": "cover.jpg",
+  "teacherName": "teacher001",
+  "teacherAvatar": "avatar.jpg",
+  "time": "2025-07-10",
+  "tag": "编程,Web",
+  "files": [
+
+    {
+      "id": 999,
+      "filename": "课程大纲.pdf",
+      "fileUrl": "/files/syllabus.pdf",
+      "description": "课程介绍文档",
+      "taskId": null,
+      "courseId": null,
+      "studentId": null,
+      "submissionId": null,
+      "tag": "教学资料"
+    },
+    {
+      "filename": "参考视频.mp4",
+      "fileUrl": "/files/shipin.mp4",
+      "description": "参考视频",
+      "taskId": null,
+      "courseId": null,
+      "tag": "示例"
+    }
+  ]
+
+}
+
+### getfilejson
+GET http://localhost:8080/course/getAll
+Accept: application/json
+
+### selectExamById
+GET http://localhost:8080/exam/selectQuestionsById/1
+Accept: application/json

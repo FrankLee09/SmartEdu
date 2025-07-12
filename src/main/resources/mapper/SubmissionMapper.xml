@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smartedu.mapper.SubmissionMapper">
+
+    <select id="getAllSubmissions" resultType="com.smartedu.entity.Submission">
+        SELECT * FROM submissions
+    </select>
+
+    <select id="selectById" parameterType="long" resultType="com.smartedu.entity.Submission">
+        SELECT*
+        FROM submissions
+        WHERE id = #{id}
+    </select>
+
+
+    <!-- 模糊组合查询提交记录 -->
+    <select id="selectAll" parameterType="com.smartedu.entity.Submission" resultType="com.smartedu.entity.Submission">
+        SELECT id, studentId, taskId, fileUrl, submitTime, filename
+        FROM submissions
+        <where>
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="studentId != null">
+                AND studentId = #{studentId}
+            </if>
+            <if test="taskId != null">
+                AND taskId = #{taskId}
+            </if>
+            <if test="fileUrl != null and fileUrl != ''">
+                AND fileUrl LIKE concat('%', #{fileUrl}, '%')
+            </if>
+            <if test="submitTime != null and submitTime != ''">
+                AND submitTime LIKE concat('%', #{submitTime}, '%')
+            </if>
+            <if test="filename != null and filename != ''">
+                AND filename LIKE concat('%', #{filename}, '%')
+            </if>
+        </where>
+        ORDER BY id ASC
+    </select>
+
+
+    <insert id="insert" parameterType="com.smartedu.entity.Submission" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO submissions (studentId, taskId, fileurl, submitTime, filename)
+        VALUES (#{studentId}, #{taskId}, #{fileUrl}, #{submitTime}, #{filename})
+    </insert>
+
+    <update id="update" parameterType="com.smartedu.entity.Submission">
+        UPDATE submissions
+        SET studentId = #{studentId},
+            taskId = #{taskId},
+            fileUrl = #{fileUrl},
+            submitTime = #{submitTime},
+            filename = #{filename}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM submissions WHERE id = #{id}
+    </delete>
+</mapper>

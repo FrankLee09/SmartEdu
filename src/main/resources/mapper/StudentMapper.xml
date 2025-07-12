@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smartedu.mapper.StudentMapper">
+
+    <!-- 查询所有 -->
+    <select id="getAllstudents" resultType="com.smartedu.entity.Student">
+        SELECT *
+        FROM students
+    </select>
+
+<!--模糊组合查询-->
+    <select id="selectAll" parameterType="com.smartedu.entity.Student" resultType="com.smartedu.entity.Student">
+        SELECT *
+        FROM students
+        <where>
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                AND name LIKE concat('%', #{name}, '%')
+            </if>
+            <if test="email != null and email != ''">
+                AND email LIKE concat('%', #{email}, '%')
+            </if>
+            <if test="classId != null">
+                AND classId = #{classId}
+            </if>
+        </where>
+        ORDER BY id ASC
+    </select>
+
+
+    <!-- 按 ID 查询 -->
+    <select id="selectById" parameterType="long" resultType="com.smartedu.entity.Student">
+        SELECT *
+        FROM students
+        WHERE id = #{id}
+    </select>
+
+<!--    &lt;!&ndash; 插入 &ndash;&gt;-->
+<!--    <insert id="insert" parameterType="com.smartedu.entity.Student" useGeneratedKeys="true" keyProperty="id">-->
+<!--        INSERT INTO students (id ,name, email, "classId",avatar,username, password,"newPassword",role)-->
+<!--        VALUES (#{id},#{name}, #{email}, #{classId},#{avatar},#{username}, #{password},#{newPassword},#{role})-->
+<!--    </insert>-->
+    <insert id="insert" parameterType="com.smartedu.entity.Student" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO students
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            name,
+            email,
+            "classId",
+            avatar,
+            username,
+            password,
+            "newPassword",
+            role
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            #{name},
+            #{email},
+            #{classId},
+            #{avatar},
+            #{username},
+            #{password},
+            #{newPassword},
+            #{role}
+        </trim>
+    </insert>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="com.smartedu.entity.Student">
+        UPDATE students
+        SET name = #{name},
+            email = #{email},
+            "classId" = #{classId},
+            avatar = #{avatar},
+            username = #{username},
+            password = #{password},
+            "newPassword" = #{newPassword},
+            role = #{role}
+           WHERE id = #{id}
+    </update>
+
+    <!-- 删除 -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM students WHERE id = #{id}
+    </delete>
+
+
+</mapper>

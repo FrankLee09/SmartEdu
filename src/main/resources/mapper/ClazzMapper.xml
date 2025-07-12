@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smartedu.mapper.ClazzMapper">
+
+    <select id="getAllclasses" parameterType="com.smartedu.entity.Clazz" resultType="com.smartedu.entity.Clazz">
+        SELECT * FROM "classes"
+    </select>
+
+
+    <!-- 查询：按 ID 查询 -->
+    <select id="selectById" parameterType="long" resultType="Clazz">
+        SELECT * FROM classes WHERE id = #{id}
+    </select>
+
+    <!-- 模糊组合查询班级 -->
+    <select id="selectAll" parameterType="com.smartedu.entity.Clazz" resultType="com.smartedu.entity.Clazz">
+        SELECT *
+        FROM classes
+        <where>
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                AND name LIKE concat('%', #{name}, '%')
+            </if>
+            <if test="teacherId != null">
+                AND teacherId = #{teacherId}
+            </if>
+        </where>
+        ORDER BY id ASC
+    </select>
+
+
+    <!-- 插入 -->
+    <insert id="insert" parameterType="Clazz" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO classes ( id ,name, "teacherId")
+        VALUES (#{id},#{name}, #{teacherId})
+    </insert>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="Clazz">
+        UPDATE classes
+        SET name = #{name}, "teacherId" = #{teacherId}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 删除 -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM classes WHERE id = #{id}
+    </delete>
+
+
+</mapper>

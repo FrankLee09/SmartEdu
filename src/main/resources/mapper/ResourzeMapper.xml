@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smartedu.mapper.ResourzeMapper">
+
+    <!-- 查询所有 -->
+    <select id="getAllResources" resultType="com.smartedu.entity.Resourze">
+        SELECT *
+        FROM resources
+
+
+    </select>
+
+    <!-- 模糊组合查询 -->
+    <select id="selectAll" parameterType="com.smartedu.entity.Resourze" resultType="com.smartedu.entity.Resourze">
+        SELECT *
+        FROM resources
+        <where>
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="title != null and title != ''">
+                AND title LIKE concat('%', #{title}, '%')
+            </if>
+            <if test="tag != null and tag != ''">
+                AND tag LIKE concat('%', #{tag}, '%')
+            </if>
+            <if test="courseId != null">
+                AND courseId = #{courseId}
+            </if>
+            <if test="uploadTime != null">
+                AND uploadTime = #{uploadTime}
+            </if>
+        </where>
+        ORDER BY id ASC
+    </select>
+
+    <!-- 按 ID 查询 -->
+    <select id="selectById" parameterType="long" resultType="com.smartedu.entity.Resourze">
+        SELECT id, title, "courseId", "uploadTime", "fileUrl", tag
+        FROM resources
+        WHERE id = #{id}
+    </select>
+
+    <!-- 插入 -->
+    <insert id="insert" parameterType="com.smartedu.entity.Resourze" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO resources (title, "courseId", "uploadTime", "fileUrl", tag)
+        VALUES (#{title}, #{courseId}, #{uploadTime}, #{fileUrl}, #{tag})
+    </insert>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="com.smartedu.entity.Resourze">
+        UPDATE resources
+        SET title = #{title},
+            "courseId" = #{courseId},
+            "uploadTime" = #{uploadTime},
+            "fileUrl" = #{fileUrl},
+            tag = #{tag}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 删除 -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM resources WHERE id = #{id}
+    </delete>
+
+</mapper>

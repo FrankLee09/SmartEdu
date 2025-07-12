@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smartedu.mapper.StudentAnswerMapper">
+
+    <!-- 查询所有 -->
+    <select id="getAllAnswers" resultType="com.smartedu.entity.StudentAnswer">
+        SELECT *
+        FROM studentanswers
+    </select>
+
+    <!-- 模糊组合查询 -->
+    <select id="selectAll" parameterType="com.smartedu.entity.StudentAnswer" resultType="com.smartedu.entity.StudentAnswer">
+        SELECT *
+        FROM studentanswers
+        <where>
+            <if test="id != null">
+                AND id = #{id}
+            </if>
+            <if test="studentId != null">
+                AND studentId = #{studentId}
+            </if>
+            <if test="examId != null">
+                AND examId = #{examId}
+            </if>
+            <if test="questionId != null">
+                AND questionId = #{questionId}
+            </if>
+            <if test="answer != null and answer != ''">
+                AND answer LIKE concat('%', #{answer}, '%')
+            </if>
+            <if test="getscore != null">
+                AND getscore = #{getscore}
+            </if>
+        </where>
+        ORDER BY id ASC
+    </select>
+
+    <!-- 按 ID 查询 -->
+    <select id="selectById" parameterType="long" resultType="com.smartedu.entity.StudentAnswer">
+        SELECT id, "studentId", "examId", "questionId", getscore, answer
+        FROM studentanswers
+        WHERE id = #{id}
+    </select>
+
+    <!-- 插入 -->
+    <insert id="insert" parameterType="com.smartedu.entity.StudentAnswer" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO studentanswers ("studentId", "examId", "questionId", getscore, answer)
+        VALUES (#{studentId}, #{examId}, #{questionId}, #{getscore}, #{answer})
+    </insert>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="com.smartedu.entity.StudentAnswer">
+        UPDATE studentanswers
+        SET "studentId" = #{studentId},
+            "examId" = #{examId},
+            "questionId" = #{questionId},
+            getscore = #{getscore},
+            answer = #{answer}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 删除 -->
+    <delete id="deleteById" parameterType="long">
+        DELETE FROM studentanswers WHERE id = #{id}
+    </delete>
+
+</mapper>
