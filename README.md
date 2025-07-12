@@ -2,7 +2,7 @@
 
 ## 项目概述
 
-SmartEdu 是一个智能教育相关的后端项目，提供了丰富的教育业务接口，涵盖资源管理、考试管理、学生答题、文件处理、知识图谱、推荐系统等多个方面。项目采用 Spring Boot 框架构建，通过 RESTful API 与前端交互，支持多种业务场景开发。
+SmartEdu 是一个智能教育相关的后端项目，提供了丰富的教育业务接口，涵盖资源管理、考试管理、学生答题、文件处理、知识图谱、推荐系统等多个方面。项目后端采用 Spring Boot 框架构建，通过 RESTful API 与前端交互，支持多种业务场景开发。
 
 ## 项目结构
 
@@ -94,7 +94,7 @@ Dify 相关接口（路径前缀 /dify）
 ## 项目运行
 
 第一步 克隆项目  
-git clone https://github.com/your-repo/smartedu.git
+git clone https://github.com/FrankLee09/SmartEdu.git
 
 第二步 配置数据库连接  
 修改 application.properties 或 application.yml 文件
