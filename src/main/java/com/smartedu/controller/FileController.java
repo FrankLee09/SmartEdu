@@ -49,7 +49,7 @@ public class FileController {
             e.printStackTrace();
             throw new CustomException("500", "文件上传失败");
         }
-        String url = "http://172.18.227.79:8080/files/download/" + fileUrl;
+        String url = "http://localhost:8080/files/download/" + fileUrl;
         return Result.success(url);
     }
 
@@ -68,7 +68,7 @@ public class FileController {
             e.printStackTrace();
             throw new CustomException("500", "文件上传失败");
         }
-        String url = "http://172.18.227.79:8080/files/" + fileUrl;
+        String url = "http://localhost:8080/files/" + fileUrl;
         return Result.success(url);
     }
 

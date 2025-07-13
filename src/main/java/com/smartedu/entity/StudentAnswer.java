@@ -41,16 +41,18 @@ public class StudentAnswer {
     public Long getStudentId() {
         return studentId;
     }
+
     public Long getExamId() {
         return examId;
     }
+
     public Double getGetscore() {
         return getscore;
     }
+
     public Long getQuestionId() {
         return questionId;
     }
-
 
 
 }

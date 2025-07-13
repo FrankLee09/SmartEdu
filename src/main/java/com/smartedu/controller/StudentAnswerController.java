@@ -1,6 +1,7 @@
 package com.smartedu.controller;
 
 import com.smartedu.common.Result;
+import com.smartedu.entity.Student;
 import com.smartedu.entity.StudentAnswer;
 import com.smartedu.service.StudentAnswerService;
 import jakarta.annotation.Resource;

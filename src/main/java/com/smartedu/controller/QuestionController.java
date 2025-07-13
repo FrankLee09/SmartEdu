@@ -57,10 +57,10 @@ public class QuestionController {
 
     @GetMapping("/random")
     public Result getRandomQuestions(@RequestParam("courseId") Long courseId,
-                                     @RequestParam("kgPoint") String KGpoint,
+                                     @RequestParam("kgPoint") String kgPoint,
                                      @RequestParam("selectCount") int selectCount,
                                      @RequestParam("shortAnswerCount") int shortAnswerCount) {
-        List<Question> list = questionService.getRandomQuestions(courseId,KGpoint,selectCount, shortAnswerCount);
+        List<Question> list = questionService.getRandomQuestions(courseId,kgPoint,selectCount, shortAnswerCount);
         return Result.success(list);
     }
 
@@ -71,6 +71,13 @@ public class QuestionController {
             questionService.insert(question);
         }
         return Result.success();
+    }
+
+    @GetMapping("/byKnowledge")
+    public Result getQuestionsByKnowledge(@RequestParam("kgPoint") String kgPoint) {
+        System.out.println("Received kgPoint: " + kgPoint); // 添加日志
+        List<Question> list = questionService.getQuestionsByKnowledge(kgPoint);
+        return Result.success(list);
     }
 
 }

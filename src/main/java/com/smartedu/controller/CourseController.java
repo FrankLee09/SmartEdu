@@ -58,7 +58,6 @@ public class CourseController {
         courseService.deleteById(id);
         return Result.success();
     }
-    
 
     @DeleteMapping("/deleteBatch")
     public Result deleteBatch(@RequestBody List<Long> ids) {

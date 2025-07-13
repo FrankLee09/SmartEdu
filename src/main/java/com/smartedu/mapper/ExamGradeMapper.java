@@ -21,3 +21,4 @@ public interface ExamGradeMapper {
 
     int deleteById(Long id);
 }
+

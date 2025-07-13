@@ -20,6 +20,11 @@ public interface QuestionMapper {
 
     void deleteById(Long id);
 
-    List<Question> getRandomQuestions(Long courseId, String KGpoint, int selectCount, int shortAnswerCount);
+    List<Question> getRandomQuestions(@Param("courseId") Long courseId,
+                                      @Param("kgPoint") String kgPoint,
+                                      @Param("selectCount") int selectCount,
+                                      @Param("shortAnswerCount") int shortAnswerCount);
+
+    List<Question> getQuestionsByKnowledge(@Param("kgPoint") String kgPoint);
 
 }

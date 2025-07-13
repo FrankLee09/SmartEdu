@@ -37,7 +37,11 @@ public class QuestionService {
         questionMapper.deleteById(id);
     }
 
-    public List<Question> getRandomQuestions(Long courseId,String KGpoint, int selectCount, int shortAnswerCount) {
-        return questionMapper.getRandomQuestions(courseId, KGpoint,selectCount, shortAnswerCount);
+    public List<Question> getRandomQuestions(Long courseId, String kgPoint, int selectCount, int shortAnswerCount) {
+        return questionMapper.getRandomQuestions(courseId, kgPoint, selectCount, shortAnswerCount);
+    }
+
+    public List<Question> getQuestionsByKnowledge(String kgPoint) {
+        return questionMapper.getQuestionsByKnowledge(kgPoint);
     }
 }
