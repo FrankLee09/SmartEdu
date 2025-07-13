@@ -1,0 +1,547 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 知识图谱
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/ollama:0.0.6@f430f3eb959f4863b1e87171544a8fec179441b90deda5693c85f07712d2a68c
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: question-classifier
+      id: 1751531261037-source-1751612685305-target
+      source: '1751531261037'
+      sourceHandle: source
+      target: '1751612685305'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 1751531437491-source-1751613234096-target
+      source: '1751531437491'
+      sourceHandle: source
+      target: '1751613234096'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 1751613225149-source-1751613235715-target
+      source: '1751613225149'
+      sourceHandle: source
+      target: '1751613235715'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 1751613227182-source-1751613237397-target
+      source: '1751613227182'
+      sourceHandle: source
+      target: '1751613237397'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1751636637348-source-1751613227182-target
+      source: '1751636637348'
+      sourceHandle: source
+      target: '1751613227182'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1751612685305-1751612710874-1751636637348-target
+      source: '1751612685305'
+      sourceHandle: '1751612710874'
+      target: '1751636637348'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1751612685305-1-1751637109445-target
+      source: '1751612685305'
+      sourceHandle: '1'
+      target: '1751637109445'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1751637109445-source-1751531437491-target
+      source: '1751637109445'
+      sourceHandle: source
+      target: '1751531437491'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: question-classifier
+        targetType: knowledge-retrieval
+      id: 1751612685305-2-1751637175033-target
+      source: '1751612685305'
+      sourceHandle: '2'
+      target: '1751637175033'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1751637175033-source-1751613225149-target
+      source: '1751637175033'
+      sourceHandle: source
+      target: '1751613225149'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: knowledge
+          max_length: 256
+          options: []
+          required: true
+          type: text-input
+          variable: knowledge
+      height: 89
+      id: '1751531261037'
+      position:
+        x: 15.000000000000057
+        y: 281
+      positionAbsolute:
+        x: 15.000000000000057
+        y: 281
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1751637109445'
+          - result
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: deepseek-r1:32b
+          provider: langgenius/ollama/ollama
+        prompt_template:
+        - id: d33573b9-b7a9-4dbb-8fec-2abb2515085c
+          role: system
+          text: "请基于我给出的知识点（不要增加也不要减少任何知识点），结合概率论的相关专业知识（基于知识库），构建一棵知识图谱。\n输出 JSON，格式：\n\
+            {\n         rootId: 'a',\n         nodes: [\n           { id: 'a', text:\
+            \ 'A', borderColor: 'yellow' },\n           { id: 'b', text: 'B', color:\
+            \ '#43a2f1', fontColor: 'yellow' },\n           { id: 'c', text: 'C',\
+            \ nodeShape: 1, width: 80, height: 60 }\n         ],\n         lines:\
+            \ [\n           { from: 'a', to: 'b', text: '关系1'},\n           { from:\
+            \ 'a', to: 'c', text: '关系2' }\n         ]\n}\n此外，下面是我通过知识库检索获得的相关知识信息：{{#context#}}}\
+            \   \n\n 下面是知识点列表（可能存在上下位、依赖等关系，请智能归纳），请按照我先前所述的json格式输出知识图谱信息：\n{{#1751531261037.knowledge#}}}"
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1751531437491'
+      position:
+        x: 877.9999999999998
+        y: 262.81140120187524
+      positionAbsolute:
+        x: 877.9999999999998
+        y: 262.81140120187524
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        classes:
+        - id: '1'
+          name: 概率论（数学）相关知识
+        - id: '2'
+          name: 英语相关知识
+        - id: '1751612710874'
+          name: 嵌入式系统（计算机）相关知识
+        desc: ''
+        instructions: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: deepseek-r1:32b
+          provider: langgenius/ollama/ollama
+        query_variable_selector:
+        - '1751531261037'
+        - knowledge
+        selected: false
+        title: 问题分类器
+        topics: []
+        type: question-classifier
+        vision:
+          enabled: false
+      height: 209
+      id: '1751612685305'
+      position:
+        x: 285.45285030046887
+        y: 281
+      positionAbsolute:
+        x: 285.45285030046887
+        y: 281
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1751531261037'
+          - knowledge
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: deepseek-r1:32b
+          provider: langgenius/ollama/ollama
+        prompt_template:
+        - id: 7a488e54-135f-4b90-b765-03260a92ddb7
+          role: system
+          text: "请基于我给出的知识点（不要增加也不要减少任何知识点），结合英语的相关专业知识（基于知识库），构建一棵知识图谱。\n输出 JSON，格式：\n\
+            {\n         rootId: 'a',\n         nodes: [\n           { id: 'a', text:\
+            \ 'A', borderColor: 'yellow' },\n           { id: 'b', text: 'B', color:\
+            \ '#43a2f1', fontColor: 'yellow' },\n           { id: 'c', text: 'C',\
+            \ nodeShape: 1, width: 80, height: 60 }\n         ],\n         lines:\
+            \ [\n           { from: 'a', to: 'b', text: '关系1'},\n           { from:\
+            \ 'a', to: 'c', text: '关系2' }\n         ]\n}\n\n此外，下面是我通过知识库检索获得的相关知识信息：{{#context#}}}\
+            \   \n\n 下面是知识点列表（可能存在上下位、依赖等关系，请智能归纳），请按照我先前所述的json格式输出知识图谱信息：\n{{#1751531261037.knowledge#}}}\n"
+        selected: false
+        title: LLM 2
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1751613225149'
+      position:
+        x: 877.9999999999998
+        y: 392.78599927155443
+      positionAbsolute:
+        x: 877.9999999999998
+        y: 392.78599927155443
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1751636637348'
+          - result
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: deepseek-r1:32b
+          provider: langgenius/ollama/ollama
+        prompt_template:
+        - id: f73ec3c2-e50d-42cb-920f-27b3d6a7507f
+          role: system
+          text: "请基于我给出的知识点（不要增加也不要减少任何知识点），结合嵌入式系统的相关专业知识（基于知识库），构建一棵知识图谱。\n输出 JSON，格式：\n\
+            {\n         rootId: 'a',\n         nodes: [\n           { id: 'a', text:\
+            \ 'A', borderColor: 'yellow' },\n           { id: 'b', text: 'B', color:\
+            \ '#43a2f1', fontColor: 'yellow' },\n           { id: 'c', text: 'C',\
+            \ nodeShape: 1, width: 80, height: 60 }\n         ],\n         lines:\
+            \ [\n           { from: 'a', to: 'b', text: '关系1'},\n           { from:\
+            \ 'a', to: 'c', text: '关系2' }\n         ]\n}\n\n此外，下面是我通过知识库检索获得的相关知识信息：{{#context#}}}\
+            \   \n\n 下面是知识点列表（可能存在上下位、依赖等关系，请智能归纳），请按照我先前所述的json格式输出知识图谱信息：\n{{#1751531261037.knowledge#}}}\n"
+        selected: false
+        structured_output_enabled: false
+        title: LLM 3
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1751613227182'
+      position:
+        x: 877.9999999999998
+        y: 518.8114012018752
+      positionAbsolute:
+        x: 877.9999999999998
+        y: 518.8114012018752
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1751531437491'
+          - text
+          variable: text
+        selected: true
+        title: 结束
+        type: end
+      height: 89
+      id: '1751613234096'
+      position:
+        x: 1229.9999999999998
+        y: 262.81140120187524
+      positionAbsolute:
+        x: 1229.9999999999998
+        y: 262.81140120187524
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1751613225149'
+          - text
+          variable: text
+        selected: false
+        title: 结束 2
+        type: end
+      height: 89
+      id: '1751613235715'
+      position:
+        x: 1229.9999999999998
+        y: 392.78599927155443
+      positionAbsolute:
+        x: 1229.9999999999998
+        y: 392.78599927155443
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1751613227182'
+          - text
+          variable: text
+        selected: false
+        title: 结束 3
+        type: end
+      height: 89
+      id: '1751613237397'
+      position:
+        x: 1229.9999999999998
+        y: 518.8114012018752
+      positionAbsolute:
+        x: 1229.9999999999998
+        y: 518.8114012018752
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids:
+        - H3hG47JcYFvpenIoXjmEV6gBE2kGIfp5FzSmV4BQAen2OiFyg64HKi6IGJ2rW88U
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: weighted_score
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0.3
+            vector_setting:
+              embedding_model_name: deepseek-r1:32b
+              embedding_provider_name: langgenius/ollama/ollama
+              vector_weight: 0.7
+        query_variable_selector:
+        - '1751531261037'
+        - knowledge
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索
+        type: knowledge-retrieval
+      height: 91
+      id: '1751636637348'
+      position:
+        x: 595.2220613430951
+        y: 518.8114012018752
+      positionAbsolute:
+        x: 595.2220613430951
+        y: 518.8114012018752
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids:
+        - /j9VssOdubYTKcjMtxvkOX8jYWDPFVYWWHU9+AFlgfds8RZaKurthSrcz1F7kNfe
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: weighted_score
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0.3
+            vector_setting:
+              embedding_model_name: deepseek-r1:32b
+              embedding_provider_name: langgenius/ollama/ollama
+              vector_weight: 0.7
+        query_variable_selector:
+        - '1751531261037'
+        - knowledge
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索 2
+        type: knowledge-retrieval
+      height: 91
+      id: '1751637109445'
+      position:
+        x: 595.2220613430951
+        y: 262.81140120187524
+      positionAbsolute:
+        x: 595.2220613430951
+        y: 262.81140120187524
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids:
+        - RfkDwl4+F45BnaQLxq04uWqQEeIQvahxYKtIeU+TdM09vmMwOPZI5nxBCFVZ6ROY
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: weighted_score
+          top_k: 4
+          weights:
+            keyword_setting:
+              keyword_weight: 0.3
+            vector_setting:
+              embedding_model_name: deepseek-r1:32b
+              embedding_provider_name: langgenius/ollama/ollama
+              vector_weight: 0.7
+        query_variable_selector:
+        - '1751531261037'
+        - knowledge
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索 3
+        type: knowledge-retrieval
+      height: 91
+      id: '1751637175033'
+      position:
+        x: 586.2220613430952
+        y: 392.78599927155443
+      positionAbsolute:
+        x: 586.2220613430952
+        y: 392.78599927155443
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 130.97948763912348
+      y: 131.50254925009722
+      zoom: 0.6597539553864479
