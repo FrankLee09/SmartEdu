@@ -1,0 +1,210 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 简答题评分系统
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/ollama:0.0.6@f430f3eb959f4863b1e87171544a8fec179441b90deda5693c85f07712d2a68c
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: llm
+      id: 1751524091658-source-1751524227143-target
+      source: '1751524091658'
+      sourceHandle: source
+      target: '1751524227143'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 1751524227143-source-1751525411382-target
+      source: '1751524227143'
+      sourceHandle: source
+      target: '1751525411382'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: question
+          max_length: 256
+          options: []
+          required: true
+          type: text-input
+          variable: question
+        - label: solution
+          max_length: 256
+          options: []
+          required: true
+          type: text-input
+          variable: solution
+        - label: answer
+          max_length: 256
+          options: []
+          required: true
+          type: text-input
+          variable: answer
+        - label: score
+          max_length: 256
+          options: []
+          required: true
+          type: text-input
+          variable: score
+      height: 167
+      id: '1751524091658'
+      position:
+        x: 80
+        y: 281
+      positionAbsolute:
+        x: 80
+        y: 281
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: deepseek-r1:32b
+          provider: langgenius/ollama/ollama
+        prompt_template:
+        - id: df7c6437-c2bc-44c9-b3c5-d87db2464230
+          role: system
+          text: "你是一名专业的教师，现在需要对学生回答的简答题进行评分，你接收到“question”、“solution”、“answer”和“score”，其中“question”中的内容为题干，“solution”中的内容为学生的作答，“answer”为标准答案，“score”为本题的总分，你需要在0到“score”中的分数中选择合适的分数进行输出，在输出时请使用思维链，输出详细的思考过程，并在最后输出给分的数值。\n\
+            \n示例1：\nquestion：什么是嵌入式系统?\nsolution：嵌入式系统是把软件写在硬件里，用来控制机器设备，比如洗衣机、电视机等。这种系统运行速度要快，并且省电。\n\
+            answer：嵌入式系统是一种特殊的计算机系统，它将硬件和软件紧密集成，用于控制、监测或执行特定功能。这些系统通常运行在具有固定功能的设备上，例如手机、家电、汽车等。嵌入式系统的设计注重可靠性、高效性和节能性。\n\
+            score：10\n\n评分过程：\nStep 1: \n理解题意——本题考察嵌入式系统的定义、功能和设计要点，总分如score中所示应为\
+            \ 10 分；\nStep 2: \n提取要点——标准答案要点包括：\n1. 硬件与软件的紧密集成\n2. 用于控制、监测或执行特定功能\n\
+            3. 典型设备场景（手机、家电、汽车等）\n4. 设计注重可靠性、高效性、节能性\nStep 3: \n对比学生作答——\n1. “把软件写在硬件里”——表述较为笼统，但可视作对“紧密集成”的部分理解，给\
+            \ 2/3 分；\n2. “用来控制机器设备”——准确覆盖控制功能，给 3/3 分；\n3. 给出了“洗衣机、电视机”等示例，贴合家电场景，给\
+            \ 2/2 分；\n4. 提到了“运行速度要快，还要省电”，涵盖了高效性与节能性，但未提可靠性，给 1/2 分；\nStep 4: \n汇总得分——2\
+            \ + 3 + 2 + 1 = 8 分。\n\n输出：8\n\n示例2：\nquestion：什么是关系型数据库？\nsolution：关系型数据库就是把数据存在表里，表和表之间可以关联起来，常用的有\
+            \ MySQL、Oracle、SQL Server。它支持 SQL 语言来增删改查数据。\nanswer：关系型数据库是一种基于关系模型来组织和管理数据的数据库系统。它使用二维表（关系）来存储数据，通过主键和外键在不同表之间建立联系。关系型数据库提供强大的事务支持和数据完整性约束，常见产品包括\
+            \ MySQL、PostgreSQL、Oracle 和 SQL Server。它主要使用结构化查询语言（SQL）进行数据定义、操作和控制。\n\
+            score：20\n评分过程：\nStep 1：理解题意——本题考查关系型数据库的定义、存储结构、关键特性及典型产品，总分如score给出应为20分；\n\
+            Step 2：提取要点——标准答案要点包括：\n基于关系模型（二维表）组织数据\n主键/外键建立表间联系\n支持事务与完整性约束\n使用 SQL\
+            \ 语言增删改查\n典型产品（MySQL、Oracle、PostgreSQL、SQL Server 等）\nStep 3：对比学生作答——\n\
+            “把数据存在表里”——覆盖了关系模型中“表”这一要点，给 4/ 4分；\n“表和表之间可以关联起来”——暗示了主外键关联，但未明确“主键/外键”术语，给\
+            \ 2/ 4分；\n“常用的有 MySQL、Oracle、SQL Server”——列出了典型产品，给 4/ 4分；\n“支持 SQL 语言来增删改查数据”——准确涵盖了\
+            \ SQL 支持与 CRUD 功能，给 6/6分；\n未提及事务支持和数据完整性约束，给 0/2分；\nStep 4：汇总得分——4 + 2\
+            \ + 4 + 6 + 0 = 16 分。\n输出：8\n\n下面请对这个学生的回答进行评分：\nquestion：{{#1751524091658.question#}}}\n\
+            solution：{{#1751524091658.solution#}}}\nanswer：{{#1751524091658.answer#}}}\n\
+            score：{{#1751524091658.score#}}}\n"
+        selected: true
+        structured_output_enabled: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1751524227143'
+      position:
+        x: 384
+        y: 281
+      positionAbsolute:
+        x: 384
+        y: 281
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1751524227143'
+          - text
+          variable: text
+        selected: false
+        title: 结束
+        type: end
+      height: 89
+      id: '1751525411382'
+      position:
+        x: 685
+        y: 281
+      positionAbsolute:
+        x: 685
+        y: 281
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 49.31064660707119
+      y: -180.5611818028783
+      zoom: 1.2030250360821164
